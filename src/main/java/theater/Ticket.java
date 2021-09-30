@@ -1,6 +1,13 @@
 package theater;
 
 public class Ticket {
-    public Ticket(long ticketFee) {
+    private Long fee;
+
+    public Ticket(Long fee) {
+        this.fee = fee;
+    }
+
+    public Long getFee() {
+        return fee;
     }
 }
