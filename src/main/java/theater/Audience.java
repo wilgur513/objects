@@ -7,6 +7,17 @@ public class Audience {
         this.bag = bag;
     }
 
+    public Long buy(Ticket ticket) {
+        if(getBag().hasInvitation()) {
+            getBag().setTicket(ticket);
+            return 0L;
+        }
+
+        getBag().minusAmount(ticket.getFee());
+        getBag().setTicket(ticket);
+        return ticket.getFee();
+    }
+
     public boolean hasTicket() {
         return bag.hasTicket();
     }
